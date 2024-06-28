@@ -1,47 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
-    <!-- libreria abierta agregada 1-materialize, fuente de google y cascada de estilos css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&C Babilonia</title>
-    <link rel="stylesheet" href="./mainstyle.css">
-</head>
-<body>
-  <a href="#top" id="scrollToTop">.</a>
-    
-
-    
-    
-    <nav class="nav-extended">
-        <div class="nav-wrapper">
-          <a name="top" id="titulo-logo" href="./index.html" class="brand-logo">
-            <span id="titulo-logo2" class="full-title"><i class="material-icons left">home</i> SERVICIOS <span class="flechita2">&</span> CONSTRUCCIONES BABILONIA</span>
-            <span class="abbr-title"><i class="material-icons right">home</i>SCB</span>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-            <li><a href="./nuestro.equipo.html"><i class="material-icons left">center_focus_strong</i>SOBRE NOSOTROS</a></li>
-            <li><a href="./contacto.html"><i class="material-icons right">mail</i>ENTRAR EN CONTACTO</a></li>
-          </ul>
-        </div>
+<!-- este codigo que comienza aca en esta marca, y termina en la etiqueta que esta mas abajo --</nav>-- 
+  debe ir en cada pagina de nuestra web, solo lo copiamos y pegamos para duplicar el esquema de la web
+  en cada pagina, luego de la estiqueta --</nav>-- va el contenido individual de cada pagina hasta
+  la etiqueta --<footer class="page-footer">-- que tambien se vuelve a duplicar para cada pagina, 
+    lo ideal es tener el mismo navbar y footer en todas las paginas de la web, ver mas abajo ejemplos -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <!-- fuente de google chakra -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         
-        <div class="nav-content">
-            <ul class="tabs tabs-transparent">
-              <li class="tab"><a href="./instrumentacion.html">Instrumentación <span class="flechita">→</span> </a></li>
-              <li class="tab"><a href="./obras.civiles.html">Obras Civiles <span class="flechita">→</span> </a></li>
-              <li class="tab"><a href="./obras.electricas.html">Eléctricas <span class="flechita">→</span> </a></li>
-              <li class="tab"><a href="./obras.mecanicas.html">Mecánicas </a></li>
-              
-            </ul>
-          </div>
-      </nav>
+        <!-- libreria abierta agregada 1-materialize + iconos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <!-- configuracion por defecto de html5 -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- titulo que aparece en el navegador -->
+        <title>Instrumentacion</title>
 
+        <!-- aca podremos agregar un favicon de laweb, esto es el icono pequeño que aparece en el explorador
+        normalmente deberia ser un icono o imagen en formato .ico o .png con tamaño de 16px x 16px (lo ideal)
+        solo se sube el icono a la carpeta imagenes y luego ponemos la ruta en el href="./imagenes/facicon ejmp" -->
+        <link rel="shortcut icon" href="./" type="image/x-icon">
+        
+        <!-- linkeamos nuestro archivo .css nuestra hoja de estilos -->
+        <link rel="stylesheet" href="./mainstyle.css">
+    </head>
+    
+    
+    
+    <!-- aca empieza el --body-- cuerpo de la web -->
+     <body>
+      <!-- aca esta el ejemplo perfecto para explicar como funcionan los aidi's --id--
+       
+      --esto es la manera que encontre de como hacer el boton del final de la pagina que te scrollea al inicio
+       de la web al clickear, basicamente es un ancla con la etiqueta --a-- al cual le doy un link
+       especifico --#top-- y un --id-- para luego configurarlo en (mainstyle.css) y el --#top-- nos sirve 
+       para hacer la llamada desde el boton que ponemos en la parte final de la web , seguir explicacion en
+       (mainstyle.css) buscar #scrollToTop -->
+      <a href="#top" id="scrollToTop">.</a>
+        
+    
+        
+        
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+              <a name="top" id="titulo-logo" href="./index.html" class="brand-logo">
+                <span id="titulo-logo2" class="full-title"><i class="material-icons left">home</i> SERVICIOS <span class="ydeltitulo">&</span> CONSTRUCCIONES BABILONIA</span>
+                <span class="abbr-title"><i class="material-icons right">home</i>SCB</span>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="navegacion-principal">
+                <li><a href="./nuestro.equipo.html"><i class="material-icons left">center_focus_strong</i><span class="texto-sn">SOBRE NOSOTROS</span></a></li>
+                <li><a href="./contacto.html"><i class="material-icons right">mail</i><span class="texto-ec">ENTRAR EN CONTACTO</span></a></li>
+              </ul>
+            </div>
+            <!-- estas son las tabs/menu secundario de la barra de navegacion -->
+            <div class="nav-content">
+                <ul class="tabs tabs-transparent">
+                  <li class="tab"><a href="./instrumentacion.html">Instrumentación <span class="flechita">→</span> </a></li>
+                  <li class="tab"><a href="./obras.civiles.html">Obras Civiles <span class="flechita">→</span> </a></li>
+                  <li class="tab"><a href="./obras.electricas.html">Eléctricas <span class="flechita">→</span> </a></li>
+                  <li class="tab"><a href="./obras.mecanicas.html">Mecánicas </a></li>
+                  
+                </ul>
+              </div>
+          </nav>
+          <!-- aca arriba termina la barra de navegacion este es el codigo que debes tener en todas tus paginas -->
+
+
+
+          <!-- aca abajo va el contenido individual de cada web, es lo que cambia de contenido en cada pagina -->
+
+
+          
       <p class="titulo-sliders">Experiencia en la instalación, mantenimiento, calibración de instrumentos de medición y control para diversos sectores industriales</p>
       
       <div id="slideri">

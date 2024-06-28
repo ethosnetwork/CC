@@ -1,9 +1,45 @@
+/* aca hay estilos basicos raiz, cuerpo, barra de navegacion, titulos, listas, parrafos, etc.
+
+--modifica, elimina o agrega estilos que quieras para cambiar el aspecto de la web,
+
+--todos estos estilos hacen cambios directos en la estructura de la web
+
+--cada comando comienza con nombrar primero la parte de la web que queremos modificar, ejemplo
+--navbar-- seguido de llave abierta --{-- --Estilo o codigo-- cerramos el comando con comillas --;-- 
+y luego cerramos la llave } .
+
+-- las clases --class-- empiezan con un -- . --
+-- los aidi's --id-- empiezan con un -- # -- 
+-- y los principales como por ejemplo --nav-- no necesitan etiqueta anterior . o # solo se coloca el --nav--
+
+los estilos configurados en un --id-- tienen prioridad por encima de una --clase-- asi sean el
+mismo elemento igualmente se le añade la etiqueta !important despues del comando para priorizar 
+el estilo que queramos tome */
+
+
+
+
 * {
    box-sizing: border-box;
    padding: 0;
    margin: 0;
 }
 
+
+
+
+/* ejemplo, aca esta el cuerpo de la web, el fondo que esta detras de el navbar el footer y 
+las cartas con imagenes y contenido de la web.
+
+-- aca en el body nos aseguramos de hacer que todas las paredes del contenedor --body-- esten pegadas a los laterales
+horizontales derecha e izquiera con el --min-width: auto;--, el contenedor principal del body se adapta 
+automaticamente al tamaño de la pantalla.
+
+--para  crear el efecto limpio entre contenedores, quitamos los margenes y rellenos que traen los
+contenedores por defecto  con el --margin-- y --padding: 0;-- esto es una medida global que se le aplica a 
+todas las esquinas de cada contenedor en este caso --body-- 
+
+-- con el --background-color: ;-- le damos el color que queremos al contenedor --body--*/
 body {
    min-width: auto;
    padding: 0;
@@ -11,10 +47,13 @@ body {
    background-color: #22272E;
 }
 
-ul {
-   font-weight: 400;
-}
 
+
+/* aca en el nav o navegacion (toda la barra de navegacion) especificamos que tipografia queremos usar y 
+la configuramos con los comandos --font-- que vemos y le damos un color de backgound con efecto 
+--linear-grandient-- hacemos una combinacion de 2 colores rgba y 1 hex en 3 etapas, y colocamos la linea
+ amarilla en el borde debajo de la barra de navegacion con --border-bottom-- le damos una base solida
+le agregamos el color amarilloCAT en codigo hex y le damos 2 pixeles de tamaño   */
 nav {
    font-family: "Chakra Petch", sans-serif;
    font-weight: 500;
@@ -22,8 +61,27 @@ nav {
    background: rgb(34, 39, 46);
    background: linear-gradient(0deg, rgba(34, 39, 46, 1) 0%, rgba(34, 39, 46, 1) 28%, #2E2725 100%);
    border-bottom: solid #FFC300 2px;
+
+}
+/* aca logramos hacer que el menu principal superior (sobrenosotros y entrarencontacto) se pongan en modo
+flexibles luego le decimos que permanezca al final de nuestro nav y luego hacemos que el texto desaparezca
+con el @mediaquery de abajo. dice que a los 870px de pantalla desaparezcan los dos textos y solo queden
+los iconos */
+.navegacion-principal {
+   display: flex;
+   justify-content: end;
+}
+@media (max-width: 870px) {
+   .texto-ec, .texto-sn {
+      display: none;
+      
+   }
+
 }
 
+/* aca modificamos todos los parrafos de la web un poco mas de lo mismo 
+
+-- aca usamos --text-shadow-- es para darle un sombreado oscuro detras de las letras a cada parrafo*/
 p {
 
    font-size: 17px;
@@ -35,86 +93,7 @@ p {
    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
-.flechita {
-   color: #FFC300;
-}
-
-.flechita2 {
-   font-size: 25px;
-}
-
-.card-content p::after,
-.card-image h6::after {
-   content: "";
-   display: block;
-   width: 50%;
-   margin: 0 auto;
-   height: 3px;
-   background-color: #FFC300;
-   margin-top: 15px;
-   margin-bottom: 15px;
-}
-
-
-
-
-.page-footer {
-
-   background: rgb(34, 39, 46);
-   background: linear-gradient(180deg, rgba(34, 39, 46, 1) 0%, rgba(34, 39, 46, 1) 28%, #2E2725 100%);
-   border-top: solid #FFC300 1px;
-   font-family: "Chakra Petch", sans-serif;
-   font-weight: 400;
-}
-
-.card {
-   background-color: #22272E;
-   padding-top: 3px;
-}
-
-.card-content {
-
-   background-color: #22272E;
-}
-
-
-
-#card-img1 {
-   margin-bottom: 25px;
-   margin-top: 25px;
-   border-radius: 7px;
-}
-
-#card-img2 {
-   margin-top: 15px;
-   border-radius: 7px;
-}
-
-
-.tabs {
-   font-family: "Chakra Petch", sans-serif;
-   font-weight: 500;
-   font-style: normal;
-
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-}
-
-.tab {
-   padding: 10px 20px;
-
-
-}
-
-.tab:hover {
-   border-top: 1px solid #FFC300;
-
-   border-radius: 2px;
-
-}
-
+/* aca mas de lo mismo pero a los titulos --h2 h6h5h3-- que fueron los tamaños que usamos */
 h2 {
    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -129,30 +108,127 @@ h3 {
    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+
+/* esta es la flechita que tiene al lado cada categoria del tablero o --tabs-- (instrumentacion, obras civiles
+electricas, mecanicas) le especificamos unicamente que queremos que sea de color amarilloCAT */
+.flechita {
+   color: #FFC300;
+}
+
+
+/* esta es la "&" que tiene entre el titulo del sitio, en este caso se especifico que fuera un poco mas pequeña 
+que el tamaño del titulo de la web (detalle) */
+.ydeltitulo {
+   font-size: 25px;
+}
+
+
+
+/* aca configuramos la apariencia y estructura de nuestra carta principal (nuestro.equipo.html),
+ le damos color de fondo y un poco de relleno superior para separar, (esto es la solo la parte superior
+ de la carta).*/
+.card {
+   background-color: #22272E;
+   padding-top: 3px;
+}
+/* aca empieza el contenido de nuestra carta, (el centro de la carta donde aparece texto
+e imagenes) solo le agregue el color de fondo */
+.card-content {
+
+   background-color: #22272E;
+}
+/* aca se le coloca un detalle amarilloCAT en el centro inferior de cada parrafo en nuestra carta */
+.card-content p::after,
+.card-image h6::after {
+   content: "";
+   display: block;
+   width: 50%;
+   margin: 0 auto;
+   height: 3px;
+   background-color: #FFC300;
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+/* estos son dos "id's" --id-- --#card-img1 #card-img2-- los uso para dar estilo especifico a cada 
+imagen por separado, lo que hago es darle un id para poder especificar a cual de las 2 imagenes quiero
+dar un estilo especifico, por que si solo colocara .img le cambiaria el tamaño o margenes a todas las
+imgenes de la web */
+#card-img1 {
+   margin-bottom: 25px;
+   margin-top: 25px;
+   border-radius: 7px;
+}
+
+#card-img2 {
+   margin-top: 15px;
+   border-radius: 7px;
+}
+
+/* un poco mas de lo mismo que usamos en la configuracion de --nav-- un fondo --lineargrandient--
+para que el footer de la web combine con el nav lo que hice fue invertir el degradado del nav y quedó
+perfecto para el footer ya que son los mismos colores solo que invertidos en posicion, tambien se agrega
+un borde en la parte de arriba con tamaño 1px solido y amarilloCAT (detalle) */
+.page-footer {
+
+   background: rgb(34, 39, 46);
+   background: linear-gradient(180deg, rgba(34, 39, 46, 1) 0%, rgba(34, 39, 46, 1) 28%, #2E2725 100%);
+   border-top: solid #FFC300 1px;
+   font-family: "Chakra Petch", sans-serif;
+   font-weight: 400;
+}
+
+
+
+
+
+
+/* estilos y configuraciones del tablero --tabs-- (instrumentacion, obrasciviles, electricas, mecanicas) */
+.tab {
+   padding: 10px 10px;
+
+
+}
+.tabs {
+   font-family: "Chakra Petch", sans-serif;
+   font-weight: 500;
+   font-style: normal;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+/* esto es el detalle que tiene al pasar el mouse por encima de cualquier tab, es un borde en la parte 
+superior de cada tab, el border radius es para curvear un poco las esquinas del borde*/
+.tab:hover {
+   border-top: 1px solid #FFC300;
+
+   border-radius: 2px;
+
+}
+/* esto es para aumentar el tamaño en altura o height de la casilla "mensaje" al escribir un mensaje largo
+ en el formulario de contacto */
 .expanded-textarea {
    height: 400px;
 }
-
+/* pequeño ajuste de espacio/margenes en el titulo de cada slider
+le dimos 20px a la parte superior de los titulos y 5px de margen en la parte inferior */
 .titulo-sliders {
    margin-top: 20px;
    margin-bottom: 5px;
 }
 
-#titulo-logo {
-   font-family: "Chakra Petch", sans-serif;
-   font-weight: 500;
-   font-style: normal;
-
-}
-
-#titulo-logo2 {
-   margin-left: 20px;
-}
-
+/* explicacion boton volver al inicio, aca lo que se hace es usar --display:none;-- ocultar ese ancla --a--
+que pusimos encima de nuestro --nav-- en la parte superior de la pagina, ocultarlo solo significa
+que no se muestra pero la accion permanece en ese lugar de la web para luego podamos llamarla y la 
+pagina scrolee hacia arriba buscando el link --#top--  */
 #scrollToTop {
    display: none;
 }
-
+/* esto es la configuracion que le ponemos a ese boton al final de las paginas, --display:flex;--
+para hacer que sea flexible luego --justify-content: center; y align-items: center;-- para alinearlo
+en el centro horizontal y verticalmente, luego --margin-bottom-- negativo en -9px para hacer que se pegue
+del borde superior del footer (detalle) */
 #volver-btn {
    display: flex;
    justify-content: center;
@@ -160,10 +236,25 @@ h3 {
    margin-bottom: -9px;
 }
 
+
+/* esto es literal eso */
+#titulo-logo {
+   font-family: "Chakra Petch", sans-serif;
+   font-weight: 500;
+   font-style: normal;
+
+}
+/* esto lo usamos para darle un poquito de margen izquierdo al titulo (detalle) */
+#titulo-logo2 {
+   margin-left: 20px;
+}
+/* con esto cambiamos el color de todos los iconos de la libreria materialize que tiene la web amarilloCAT */
 .material-icons {
    color: #FFC300;
 }
 
+/* aca intentamos que el titulo se muestre completo cuando lo miras en desktop y se acorte cuando
+se ve en pantallas mas pequeñas, uno se tiene que mostrar y el otro se tiene que ocultar */
 .full-title {
    display: block;
 }
@@ -171,8 +262,10 @@ h3 {
 .abbr-title {
    display: none;
 }
-
-@media (max-width: 1060px) {
+/* esto es el mediaquery para hacer que funcione lo que mencione arriba, esto hace que
+cuando este la pantalla por encima de 1050px en horizontal muestre el titulo completo, y que 
+cuando este en menos de 1050px oculte el titulo con --display:none;-- y muestre el corto.  */
+@media (max-width: 1050px) {
    #titulo-logo {
       text-align: center;
    }
@@ -190,6 +283,29 @@ h3 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* en esta marca empiezan los 4 sliders css que tenemos en la web */
+
+
+/* --Sliderx1 E obras Electricas-- es preferible no modificar ninguno de los sliders ya que vienen hechos a 
+medida y se pueden romper, lo que si se puede modificar es cada imagen, titulo o parrafo que
+ muestra cada imagen ver mas abajo */
 #slider {
    margin: 5px auto;
    width: 1000px;
@@ -253,6 +369,19 @@ h3 {
    color: #fff;
 }
 
+
+
+
+
+
+
+
+/* aca puedes cambiar las 4 imagenes del slider "slide_1 slide_2 slide_3 slide_4", en 
+background: url(solo cambiamos la ruta de la imagen por la que queremos poner y listo, 
+el titulo y texto se cambian en el html en este caso obras.electricas.html) 
+
+-- background-position: top;-- en este caso lo usamos para que haga focus a la parte superior de esa imagen
+y el --background-size: cover;-- lo usamos para que la imagen cubra todo el contenedor donde la metimos.*/
 #slides .slide_1 {
    background: url(./imagenes/e4d245bd-eb64-4a12-81e6-30574bc1fe5e.jfif) no-repeat center center fixed;
 
@@ -362,7 +491,14 @@ h3 {
    }
 }
 
-/* Sliderx2 OC */
+
+
+
+
+
+
+/* -- Sliderx2 OC  este slider pertenece a OBRAS CIVILES es lo mismo que el anterior solo que modificado
+para que no haga conflicto con el slider anterior, abajo para modificar las imagenes de este slider*/
 
 #slideroc {
    margin: 5px auto;
@@ -427,6 +563,14 @@ h3 {
    color: #fff;
 }
 
+
+
+
+
+
+
+
+/* aca modificamos la imagenes de la pagina obras.civiles.html de la misma manera */
 #slidesoc .slide_1 {
    background: url(./imagenes/1a34227f-1b8d-4432-a9de-ec6e30db63a1.jfif) no-repeat center center fixed;
 
@@ -536,8 +680,18 @@ h3 {
    }
 }
 
-/* Sliderx3 M */
 
+
+
+
+
+
+
+
+
+
+
+/* Sliderx3 M  este slider pertenece a la pagina MECANICAS obras.mecanicas.html modificamos imagenes abajo */
 #sliderm {
    margin: 5px auto;
    width: 1000px;
@@ -601,6 +755,12 @@ h3 {
    color: #fff;
 }
 
+
+
+
+
+
+/* aca modificamos las imagenes de slider pagina obras mecanicas mismo metodo */
 #slidesm .slide_1 {
    background: url(./imagenes/d0a961db-7bb1-44f9-b723-66728ad49bd5.jfif) no-repeat center center fixed;
 
@@ -710,7 +870,19 @@ h3 {
    }
 }
 
-/* Sliderx4 I */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sliderx4 I este slider es el de la pagina instrumentacion.html*/
 
 #slideri {
    margin: 5px auto;
@@ -775,6 +947,13 @@ h3 {
    color: #fff;
 }
 
+
+
+
+
+
+
+/* modificamos imagenes de slider pagina INSTRUMENTACION */
 #slidesi .slide_1 {
    background: url(./imagenes/2c6360b5-8e56-4c5e-aa91-88e385e3167a.jfif) no-repeat center center fixed;
 
@@ -883,3 +1062,5 @@ h3 {
       margin: 0 auto;
    }
 }
+
+/* aca termina el codigo de los 4 sliders */
