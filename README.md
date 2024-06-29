@@ -2,4 +2,4 @@
 
 ![image](https://github.com/gssusss/CC/assets/38189444/771c7c06-4ec0-4af9-9bf2-ccfb60fe3a55)
 
-MIT Licence
+MIT License
