@@ -63,6 +63,7 @@ nav {
    border-bottom: solid #FFC300 2px;
 
 }
+
 /* aca logramos hacer que el menu principal superior (sobrenosotros y entrarencontacto) se pongan en modo
 flexibles luego le decimos que permanezca al final de nuestro nav y luego hacemos que el texto desaparezca
 con el @mediaquery de abajo. dice que a los 870px de pantalla desaparezcan los dos textos y solo queden
@@ -71,10 +72,13 @@ los iconos */
    display: flex;
    justify-content: end;
 }
+
 @media (max-width: 870px) {
-   .texto-ec, .texto-sn {
+
+   .texto-ec,
+   .texto-sn {
       display: none;
-      
+
    }
 
 }
@@ -131,12 +135,14 @@ que el tamaño del titulo de la web (detalle) */
    background-color: #22272E;
    padding-top: 3px;
 }
+
 /* aca empieza el contenido de nuestra carta, (el centro de la carta donde aparece texto
 e imagenes) solo le agregue el color de fondo */
 .card-content {
 
    background-color: #22272E;
 }
+
 /* aca se le coloca un detalle amarilloCAT en el centro inferior de cada parrafo en nuestra carta */
 .card-content p::after,
 .card-image h6::after {
@@ -149,6 +155,7 @@ e imagenes) solo le agregue el color de fondo */
    margin-top: 15px;
    margin-bottom: 15px;
 }
+
 /* estos son dos "id's" --id-- --#card-img1 #card-img2-- los uso para dar estilo especifico a cada 
 imagen por separado, lo que hago es darle un id para poder especificar a cual de las 2 imagenes quiero
 dar un estilo especifico, por que si solo colocara .img le cambiaria el tamaño o margenes a todas las
@@ -188,6 +195,7 @@ un borde en la parte de arriba con tamaño 1px solido y amarilloCAT (detalle) */
 
 
 }
+
 .tabs {
    font-family: "Chakra Petch", sans-serif;
    font-weight: 500;
@@ -198,6 +206,7 @@ un borde en la parte de arriba con tamaño 1px solido y amarilloCAT (detalle) */
    align-items: center;
 
 }
+
 /* esto es el detalle que tiene al pasar el mouse por encima de cualquier tab, es un borde en la parte 
 superior de cada tab, el border radius es para curvear un poco las esquinas del borde*/
 .tab:hover {
@@ -206,11 +215,13 @@ superior de cada tab, el border radius es para curvear un poco las esquinas del 
    border-radius: 2px;
 
 }
+
 /* esto es para aumentar el tamaño en altura o height de la casilla "mensaje" al escribir un mensaje largo
  en el formulario de contacto */
 .expanded-textarea {
    height: 400px;
 }
+
 /* pequeño ajuste de espacio/margenes en el titulo de cada slider
 le dimos 20px a la parte superior de los titulos y 5px de margen en la parte inferior */
 .titulo-sliders {
@@ -225,6 +236,7 @@ pagina scrolee hacia arriba buscando el link --#top--  */
 #scrollToTop {
    display: none;
 }
+
 /* esto es la configuracion que le ponemos a ese boton al final de las paginas, --display:flex;--
 para hacer que sea flexible luego --justify-content: center; y align-items: center;-- para alinearlo
 en el centro horizontal y verticalmente, luego --margin-bottom-- negativo en -9px para hacer que se pegue
@@ -244,10 +256,12 @@ del borde superior del footer (detalle) */
    font-style: normal;
 
 }
+
 /* esto lo usamos para darle un poquito de margen izquierdo al titulo (detalle) */
 #titulo-logo2 {
    margin-left: 20px;
 }
+
 /* con esto cambiamos el color de todos los iconos de la libreria materialize que tiene la web amarilloCAT */
 .material-icons {
    color: #FFC300;
@@ -262,6 +276,7 @@ se ve en pantallas mas pequeñas, uno se tiene que mostrar y el otro se tiene qu
 .abbr-title {
    display: none;
 }
+
 /* esto es el mediaquery para hacer que funcione lo que mencione arriba, esto hace que
 cuando este la pantalla por encima de 1050px en horizontal muestre el titulo completo, y que 
 cuando este en menos de 1050px oculte el titulo con --display:none;-- y muestre el corto.  */
