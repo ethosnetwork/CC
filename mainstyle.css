@@ -299,7 +299,47 @@ cuando este en menos de 1050px oculte el titulo con --display:none;-- y muestre 
 
 
 
+.status-indicator {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   display: inline-block;
+   margin-left: 10px;
+   vertical-align: middle;
+ }
+ .status-open {
+   background-color: #00ff00;
+   box-shadow: 0 0 10px #00ff00;
+   color: #00ff00;
+ }
+ .status-closed {
+   background-color: #ff0000;
+   color: #ff0000;
+ }
 
+ .led-banner {
+   display: inline;
+   position: sticky;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background: rgba(63, 60, 60, 0.7);
+   overflow: hidden;
+ }
+ 
+ .led-text {
+   font-family: 'LED', "Chakra Petch", sans-serif;
+   color: #FFC300;
+   white-space: nowrap;
+   padding-left: 100%;
+   animation: move-text 25s linear infinite;
+   font-size: 15px;
+ }
+ 
+ @keyframes move-text {
+   0%   { transform: translate(0, 0); }
+   100% { transform: translate(-100%, 0); }
+ }
 
 
 

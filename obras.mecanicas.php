@@ -3,6 +3,33 @@
   en cada pagina, luego de la estiqueta --</nav>-- va el contenido individual de cada pagina hasta
   la etiqueta --<footer class="page-footer">-- que tambien se vuelve a duplicar para cada pagina, 
     lo ideal es tener el mismo navbar y footer en todas las paginas de la web, ver mas abajo ejemplos -->
+    <?php
+    include 'db_connect.php';
+    
+    date_default_timezone_set('America/Caracas');
+    
+    $current_day = date('N');
+    $current_time = date('H:i:s');
+    
+    $sql = "SELECT * FROM working_hours WHERE day_of_week = $current_day";
+    $result = $conn->query($sql);
+    
+    $status = 'closed';
+    $status_text = 'Cerrado';
+    
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if ($row['is_workday']) {
+            if (($current_time >= $row['morning_start'] && $current_time < $row['morning_end']) ||
+                ($current_time >= $row['afternoon_start'] && $current_time < $row['afternoon_end'])) {
+                $status = 'open';
+                $status_text = 'Abierto';
+            }
+        }
+    }
+    
+    $conn->close();
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,25 +80,29 @@
 
    <nav class="nav-extended">
       <div class="nav-wrapper">
-         <a name="top" id="titulo-logo" href="./index.html" class="brand-logo">
+         <a name="top" id="titulo-logo" href="./index.php" class="brand-logo">
             <span id="titulo-logo2" class="full-title"><i class="material-icons left">home</i> SERVICIOS <span
                   class="ydeltitulo">&</span> CONSTRUCCIONES BABILONIA</span>
             <span class="abbr-title"><i class="material-icons right">home</i>SCB</span>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="navegacion-principal">
-               <li><a href="./nuestro.equipo.html"><i class="material-icons left">center_focus_strong</i><span
+               <li><a href="./nuestro.equipo.php"><i class="material-icons left">center_focus_strong</i><span
                         class="texto-sn">SOBRE NOSOTROS</span></a></li>
-               <li><a href="./contacto.html"><i class="material-icons right">mail</i><span class="texto-ec">ENTRAR EN
+               <li><a href="./contacto.php"><i class="material-icons right">mail</i><span class="texto-ec">ENTRAR EN
                         CONTACTO</span></a></li>
             </ul>
+            <div id="status-container" style="float: right; margin-right: 20px;">
+  Estado: <?php echo $status_text; ?>
+  <span id="status-indicator" class="status-indicator status-<?php echo $status; ?>"></span>
+</div>
       </div>
       <!-- estas son las tabs/menu secundario de la barra de navegacion -->
       <div class="nav-content">
          <ul class="tabs tabs-transparent">
-            <li class="tab"><a href="./instrumentacion.html">Instrumentación <span class="flechita">→</span> </a></li>
-            <li class="tab"><a href="./obras.civiles.html">Obras Civiles <span class="flechita">→</span> </a></li>
-            <li class="tab"><a href="./obras.electricas.html">Eléctricas <span class="flechita">→</span> </a></li>
-            <li class="tab"><a href="./obras.mecanicas.html">Mecánicas </a></li>
+            <li class="tab"><a href="./instrumentacion.php">Instrumentación <span class="flechita">→</span> </a></li>
+            <li class="tab"><a href="./obras.civiles.php">Obras Civiles <span class="flechita">→</span> </a></li>
+            <li class="tab"><a href="./obras.electricas.php">Eléctricas <span class="flechita">→</span> </a></li>
+            <li class="tab"><a href="./obras.mecanicas.php">Mecánicas </a></li>
 
          </ul>
       </div>
